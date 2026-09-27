@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: youtube-watch-party-api-java
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DEFAULT_VIDEO_ID
+        value: M7lc1UVf-VE
+
+  - type: web
+    name: youtube-watch-party-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
